@@ -7,16 +7,17 @@
 <body>
     <form method="post" action="form.php">
 
-        <input name="operand1">
+        <input name="operand1" value="<?= $operand1 ?>">
         <select name="operator">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
+            <option value="+" <?php if ($operator == '+'): ?>selected<?php endif ?>>+</option>
+            <option value="-" <?php if ($operator == '-'): ?>selected<?php endif ?>>-</option>
+            <option value="*" <?php if ($operator == '*'): ?>selected<?php endif ?>>*</option>
+            <option value="/" <?php if ($operator == '/'): ?>selected<?php endif ?>>/</option>
         </select>
 
-        <input name="operand2">
+        <input name="operand2" value="<?= $operand2 ?>">
         <button type="submit">=</button>
+        <?= $result ?>
 
     </form>
 
